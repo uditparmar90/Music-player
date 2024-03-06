@@ -10,9 +10,9 @@
 <body>
     <nav>
         <ul>
-            <li class="brand"><img src="logo.png" alt="Spotify"> Spotify</li>
-            <li>Home</li>
-            <li>About</li>
+            <li class="brand"><img src="logo.png" alt="Spotify" info="about"> Spotify</li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Category</a></li>
         </ul>
     </nav>
 
@@ -76,17 +76,25 @@
     </div>
 
     <div class="bottom">
+        <span class="currentTime" id="currentTime"></span>
         <input type="range" name="range" id="myProgressBar" min="0" value="0" max="100">
         <div class="icons">
+            <span class="totalTime" id="totalTime"></span>
             <!-- fontawesome icons -->
-            <i class="fas fa-3x fa-step-backward" id="previous"></i>
-            <i class="far fa-3x fa-play-circle" id="masterPlay"></i>
-            <i class="fas fa-3x fa-step-forward" id="next"></i> 
+            <i class="fas fa-2x fa-step-backward" id="previous"></i>
+            <i class="far fa-2x fa-play-circle" id="masterPlay"></i>
+            <i class="fas fa-2x fa-step-forward" id="next"></i> 
+            <div style="display: flex; margin-left: 1137px; align-items: center;justify-content: center;">
+                <i class="fa fa-volume-up" aria-hidden="true"></i>
+                <input type="range" name="volumeControl" id="volumeControl" min="0" value="0" max="100" >
+            </div>
         </div>
         <div class="songInfo">
-            <img src="playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Warriyo - Mortals [NCS Release]</span>
+            <img src="playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Not playing</span>
+            
         </div>
-    </div>
+        
+    </div style="display:flex;align-items:right;justify-items:end;">
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
 </body>

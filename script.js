@@ -5,6 +5,7 @@ let songIndex = 0;
 let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
+let volumeControl=document.getElementById('volumeControl');
 let gif = document.getElementById('gif');
 let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
@@ -54,6 +55,13 @@ myProgressBar.addEventListener('change', ()=>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
 })
 
+// Volume Control
+volumeControl.addEventListener('change',()=>{
+    audioElement.volume=volumeControl.value/100;
+    console.log(audioElement.volume);
+
+})
+
 const makeAllPlays = ()=>{
     Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         element.classList.remove('fa-pause-circle');
@@ -74,6 +82,8 @@ Array.from(document.getElementsByClassName('songItemPlay')).forEach((element)=>{
         gif.style.opacity = 1;
         masterPlay.classList.remove('fa-play-circle');
         masterPlay.classList.add('fa-pause-circle');
+        totalTime.innerText=songs[songIndex].duration;
+        console.log([songIndex].duration);
     })
 })
 
